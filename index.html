@@ -418,7 +418,24 @@ footer .src b{color:var(--ink-soft)}
   .scrim{position:fixed;inset:var(--topbar) 0 0 0;background:rgba(0,0,0,.5);z-index:54;opacity:0;pointer-events:none;transition:.25s}
   body.nav-open .scrim{opacity:1;pointer-events:auto}
 }
-@media(max-width:560px){.riscv{grid-template-columns:1fr}.engines{grid-template-columns:1fr}.ecotools .row{grid-template-columns:1fr}}
+/* wide tables scroll inside their own box instead of widening the page */
+@media(max-width:720px){
+  .btable,.tbl{display:block;overflow-x:auto;-webkit-overflow-scrolling:touch;white-space:nowrap}
+  .btable td,.btable th,.tbl td,.tbl th{white-space:normal}
+  code.ic{white-space:normal;overflow-wrap:anywhere}
+  .lp-steps{grid-template-columns:1fr 1fr}
+  .lp-meta{gap:7px}
+}
+@media(max-width:560px){
+  .riscv{grid-template-columns:1fr}
+  .engines{grid-template-columns:1fr}
+  .ecotools .row{grid-template-columns:1fr}
+  .lp-steps{grid-template-columns:1fr 1fr}
+  .coregrid{max-width:100%}
+  #site-search{width:110px}
+  #site-search:focus{width:140px}
+  .brand small{display:none}
+}
 </style>
 </head>
 <body>
